@@ -73,6 +73,6 @@ session_start();
         
         </table></center>
         <br></br>
-            <center><a href = "buscarc.php">Volver</a></center>
+            <center><a href = "buscar.php">Volver</a></center>
     </body>
 </html>
