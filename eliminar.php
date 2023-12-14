@@ -106,6 +106,6 @@
             }
         ?>
             <br></br>
-            <a href = "index.html">Volver</a>
+            <a href = "admin.php">Volver</a>
     </body></center>
 </html>
