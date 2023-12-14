@@ -51,7 +51,7 @@ session_start();
                             break;
                         case 2:
                             echo "<script>alert('Bienvenido " . $_SESSION['name'] . " " . $_SESSION['ap'] . "')</script>";
-                            echo "<script type='text/javascript'>window.location='citador.php'</script>";
+                            echo "<script type='text/javascript'>window.location='esclavo.php'</script>";
                             break;
                         default:
                             echo "Permiso no valido";
