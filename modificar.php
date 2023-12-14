@@ -108,7 +108,11 @@
                 <tr>
                     <td>Estado:</td>
                     <td>
-                        <input type="text" name="estado" value="" size="15" maxlength="35">
+                        <select name = "estado">
+                        <option value = "Activo" selected = ""> Activo </option>
+                        <option value = "Terminado"> Terminado </option>
+                        <option value = "Espera" > Espera </option>
+                    </select>
                     </td>
                 </tr>
 
