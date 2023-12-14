@@ -54,7 +54,7 @@ session_start();
                     $result = mysqli_query($cnn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {
-                        echo "<table border='1' bgcolor='#FFFFFF'>>
+                        echo "<table border='1' bgcolor='#FFFFFF'>
                             <tr>
                                 <th>Id</th>
                                 <th>Rut Detenido</th>
