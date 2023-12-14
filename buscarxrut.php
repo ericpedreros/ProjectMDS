@@ -11,7 +11,7 @@ session_start();
     </head>
     <body>
         <form method = "post">
-        <center><table border="1">
+        <center><table border="1" bgcolor="#FFFFFF">
             <?php error_reporting(0); ?>
             
             <tr>

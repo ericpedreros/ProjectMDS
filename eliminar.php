@@ -13,7 +13,7 @@ session_start();
         <center><h1>Eliminar x Rut e Id</h1></center>
         <form method = "post">
         <?php error_reporting(0); ?>
-        <center><table border="1">
+        <center><table border="1" bgcolor="#FFFFFF">
 
             <tr>
                 <td>Rut Detenido:</td>

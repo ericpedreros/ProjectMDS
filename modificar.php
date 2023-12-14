@@ -14,7 +14,7 @@ session_start();
         <h1><b>FORMULARIO</b></h1>
         <form method="post">
             <?php error_reporting(0); ?>
-            <table border="1">
+            <table border="1" bgcolor="#FFFFFF">
                 <tr>
                     <td>Rut Detenido:</td>
                     <td>
@@ -89,7 +89,7 @@ session_start();
             }
             ?>
             <br><br>
-            <table border="1">
+            <table border="1" bgcolor="#FFFFFF">
                 <tr>
                     <td>Delito:</td>
                     <td>
