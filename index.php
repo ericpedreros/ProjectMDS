@@ -2,29 +2,32 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title> 
-        <link rel="stylesheet" href="./style.css">
-
-    </head>   
+        <title></title>
+        <link rel='stylesheet' href="./style.css">
+    </head>
     <body>
-        <center>
-            <form class="form" method="POST" action="">
-                <br>
-                <label>RUT:</label><br>
-                <input class="btnBox" type="text" name="txtrut" id="rutInput" required onkeypress="return event.charCode >= 48 && event.charCode <= 57"><br>
-                <br>
-                <div class="hr_register" style="top:-40px;"></div><br>
-                <label>CONTRASEÑA:</label><br>
-                <input class="btnBox" type="password" name="password" required><br>
-                <br>
-                <button class="btnBox" style="cursor: pointer;" name="sesion" value="Sesion" type="submit">Iniciar Sesión</button>
-                <br>
+        <div class="container">
+            <header>Inicio de sesion</header>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <div class="text">
+                    <div class="input-field">
+                        <input type="text" name="txtrut" placeholder="ingresa tu Rut" class="text" />
+                    </div>
+                    <div class="field create-password">
+                        <div class="input-field">
+                            <input type="password" name="password" placeholder="Ingresa tu contraseña" class="password" />
+                            <i class="bx bx-hide show-hide"></i>
+                        </div>
+                        <div class="input-field button">
+                            <input type="submit" name="sesion" value="Iniciar Sesion" />
+                        </div>
+                    </div>
+                </div>
             </form>
-        </center>
+
         <?php
         if (isset($_POST['sesion'])) {
             include("conexion.php"); 
