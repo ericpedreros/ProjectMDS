@@ -101,7 +101,7 @@
                 <tr>
                     <td>Observación:</td>
                     <td>
-                        <input type="text" name="observacion" value="" size="15" maxlength="255">
+                        <input type="text" name="observacion" value="" size="15" maxlength="40">
                     </td>
                 </tr>
 
@@ -132,7 +132,7 @@
                 $observ = $_POST['observacion'];
                 $estado = $_POST['estado'];
 
-                $sql = "UPDATE detencion
+                $sql = "UPDATE detenciones
                         SET DELITO = '$delito',
                             FECHA_EGRESO = '$fechae',
                             OBSERVACION = '$observ',
