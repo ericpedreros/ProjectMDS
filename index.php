@@ -8,7 +8,9 @@ session_start();
         <title></title>
         <link rel='stylesheet' href="./style.css">
     </head>
+    <?php error_reporting(0); ?>
     <body>
+        <?php error_reporting(0); ?>
         <div class="container">
             <header>Inicio de sesion</header>
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -30,10 +32,10 @@ session_start();
 
         <?php
         if (isset($_POST['sesion'])) {
-            include("conexion.php"); 
+            include("conexion.php");
             $cnn = Conectar();
-            $rut = $_POST['txtrut'];
-            $pass = $_POST['password']; 
+            $rut = mysqli_real_escape_string($cnn, $_POST['txtrut']);
+            $pass = mysqli_real_escape_string($cnn, $_POST['password']);
 
             $sql_empleado = "SELECT RUT, NOMBRES, APELLIDOS, ID_CARGO FROM empleados WHERE RUT = '$rut' AND CONTRASEÑA = '$pass'";
             $rs_empleado = mysqli_query($cnn, $sql_empleado);

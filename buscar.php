@@ -1,22 +1,35 @@
 <?php
 session_start();
 ?>
-<html>
-    <head><title>admin</title></head>
-    <body bgcolor = "#FFFFFF">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="./style.css">
+    <title>Admin</title>
+    <script>
+        function redirectToPage(pageName) {
+            window.location.href = pageName;
+        }
+    </script>
+</head>
+    <body>
+    
+    <div class="input-field button">
+
+        <input type="button" onclick="redirectToPage('buscarxtodo.php')" value="Mostrar a Todos" />
+
+        <input type="button" onclick="redirectToPage('buscarxrut.php')" value="Buscar x Rut" />
+                            
+        <input type="button" onclick="redirectToPage('buscarxid.php')" value="Buscar x Id" />
+
+        <br></br>
+
         <center>
-
-            || <a href = "buscarxtodo.php">Mostrar a Todos</a> ||
-
-            || <a href = "buscarxrut.php">Buscar x Rut</a> ||
-
-            || <a href = "buscarxid.php">Buscar x Id</a> ||
-                    
-            <br></br>
-            
-            <a href = "admin.php">Volver</a>
-
+            <a href="admin.php">Volver</a>
         </center>
 
+    </div>
     </body>
 </html>

@@ -1,89 +1,15 @@
 <?php
 session_start();
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="./style.css">
     <title>Formulario</title>
-    <script language="javascript">
-        var RelojID24 = null;
-        var RelojEjecutandose24 = false;
-
-        function DetenerReloj24() {
-            if (RelojEjecutandose24) {
-                clearTimeout(RelojID24);
-                RelojEjecutandose24 = false;
-            }
-        }
-
-        function MostrarHora24() {
-            var ahora = new Date();
-            var horas = ahora.getHours();
-            var minutos = ahora.getMinutes();
-            var segundos = ahora.getSeconds();
-            var ValorHora;
-
-            if (horas < 10)
-                ValorHora = "0" + horas;
-            else
-                ValorHora = "" + horas;
-
-            if (minutos < 10)
-                ValorHora += ":0" + minutos;
-            else
-                ValorHora += ":" + minutos;
-
-            if (segundos < 10)
-                ValorHora += ":0" + segundos;
-            else
-                ValorHora += ":" + segundos;
-
-            document.reloj24.txtDigitos.value = ValorHora;
-            RelojID24 = setTimeout(MostrarHora24, 1000);
-            RelojEjecutandose24 = true;
-        }
-
-        function IniciarReloj24() {
-            DetenerReloj24();
-            MostrarHora24();
-        }
-
-        function ValidaSoloNumeros(event) {
-            if ((event.keyCode < 48) || (event.keyCode > 57))
-                event.preventDefault();
-        }
-
-        function ValidaSoloLetras(event) {
-            if ((event.keyCode != 32) && (event.keyCode < 65) ||
-                (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
-                event.preventDefault();
-        }
-
-        window.onload = function() {
-            IniciarReloj24();
-        };        
-    </script>
 </head>
-<body bgcolor="#FFFFFF">
-    <table border="1">
-        <tr>
-            <td>
-                <body onLoad="IniciarReloj24()">
-                    <form name="reloj24">
-                        <input type="text"  name="txtDigitos" style="background-color:#FFFFFF; border-color:transparent; text-align:right" value="" size="6" readonly>
-                    </form>
-                </body>
-            </td>
-        </tr>
-            <?php
-                date_default_timezone_set('America/Santiago');
-                $vaFecha = date('d-m-y');
-            ?>
-        <tr>
-            <td>
-                <input type="text" name="txtFecha" style="background-color:#FFFFFF; border-color:transparent; text-align:right" value="<?php echo $vaFecha; ?>" size="6" readonly>
-            </td>
-        </tr>
-    </table>
+<body>
     <center>
         <h1><b>Registrar Detencion</b></h1>
         <form method="post">

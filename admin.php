@@ -23,8 +23,15 @@ session_start();
                             
         <input type="button" onclick="redirectToPage('modificar.php')" value="MODIFICAR" />
 
-        <input type="button" onclick="redirectToPage('buscar.php')" value="BUSCAR" />
+        <input type="button" onclick="redirectToPage('buscar.php')" value="BUSCAR" /> 
+
+        <br></br>
+
+        <center>
+            <a href="logout.php">Cerrar Sesion</a>
+        </center>
+
     </div>
-     
+    
 </body>
 </html>

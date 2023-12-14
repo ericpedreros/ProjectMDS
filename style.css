@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #b5ecff;
+  background-color: #ffffff;
 }
 
 .container {
@@ -57,13 +57,13 @@ body {
 }
 
 .button {
-  margin: 25px 0 6px;
+  margin: 25px 0px 6px;
 }
 
 .button input {
   color: #fff;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 400px;
   background-color: #303030;
   cursor: pointer;
   transition: all 0.3s ease;
