@@ -7,18 +7,20 @@ session_start();
         
     </head>
     <body>
-        <form class="form" method="POST" action="">
-            <br>
-            <label>RUT:</label><br>
-            <input class="btnBox" type="text" name="txtrut" id="rutInput" required onkeypress="return event.charCode >= 48 && event.charCode <= 57"><br>
-            <br>
-            <div class="hr_register" style="top:-40px;"></div><br>
-            <label>CONTRASEÑA:</label><br>
-            <input class="btnBox" type="password" name="password" required><br>
-            <br>
-            <button class="btnBox" style="cursor: pointer;" name="sesion" value="Sesion" type="submit">Iniciar Sesión</button>
-            <br>
-        </form>
+        <center>
+            <form class="form" method="POST" action="">
+                <br>
+                <label>RUT:</label><br>
+                <input class="btnBox" type="text" name="txtrut" id="rutInput" required onkeypress="return event.charCode >= 48 && event.charCode <= 57"><br>
+                <br>
+                <div class="hr_register" style="top:-40px;"></div><br>
+                <label>CONTRASEÑA:</label><br>
+                <input class="btnBox" type="password" name="password" required><br>
+                <br>
+                <button class="btnBox" style="cursor: pointer;" name="sesion" value="Sesion" type="submit">Iniciar Sesión</button>
+                <br>
+            </form>
+        </center>
         <?php
         if (isset($_POST['sesion'])) {
             include("conexion.php"); 
