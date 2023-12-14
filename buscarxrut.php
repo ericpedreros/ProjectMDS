@@ -3,34 +3,28 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar x Rut</title>
-</head>
-<body>
-    
-</body>
-</html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Buscar x Rut</title>
+    </head>
+    <body>
         <form method = "post">
         <center><table border="1">
             <?php error_reporting(0); ?>
             
             <tr>
-                <td>Rut Empleado:</td>
+                <td>Rut Detenido:</td>
                 <td>
-                    <input type = "text"    name = "rut_empleado"   value = ""  size = "15"   maxlength = "13">
+                    <input type="text" name="rut_det" value="" size="15" maxlength="13">
                 </td>
-            </tr>
-
-            <br></br>
-
-            <tr>
-                <td>Rut Estudiante:</td> 
-                <td>
-                    <input type = "text"    name = "rut_estud"   value = ""  size = "15"   maxlength = "13">
-                </td>
-            </tr>
+                </tr>
+                <tr>
+                    <td>Rut Empleado:</td>
+                    <td>
+                        <input type="text" name="rut_empleado" value="" size="15" maxlength="13">
+                    </td>
+                </tr>
             
             <br></br>
 
@@ -41,16 +35,14 @@ session_start();
             
             <tr>
                 <th>Id</th>
+                <th>Rut Detenido</th>
                 <th>Rut Empleado</th>
-                <th>Rut Estudiante</th>
-                <th>Num Aula</th>
-                <th>Motivo</th>
-                <th>Fecha Registro</th>
-                <th>Fecha Acordada</th>
-                <th>Estado</th>
+                <th>Id Comisaria</th>
+                <th>Delito</th>
+                <th>Fecha Ingreso</th>
+                <th>Fecha Egreso</th>
                 <th>Observacion</th>
-                <th>Acuerdos</th>
-
+                <th>Estado</th>
             </tr>
 
             <?php
@@ -59,12 +51,12 @@ session_start();
                 if ($_POST['search'] == "buscar"){
                     include("conexion.php"); 
                     $cnn = Conectar();
+                    $rutdet = $_POST['rut_det'];
                     $rutemp = $_POST['rut_empleado'];
-                    $rutest = $_POST['rut_estud'];
 
                     $sql = "SELECT *
-                    FROM cita
-                    WHERE (RUT_EMPLEADO = '$rutemp' OR RUT_ESTUD = '$rutest')";
+                    FROM detenciones
+                    WHERE (RUT_DETENIDO = '$rutdet' OR RUT_EMPLEADO = '$rutemp')";
                     $result = mysqli_query($cnn, $sql);
 
                         while ($row = mysqli_fetch_array($result)) {
@@ -78,8 +70,6 @@ session_start();
                             echo "<td>" . $row["6"] . "</td>";
                             echo "<td>" . $row["7"] . "</td>";
                             echo "<td>" . $row["8"] . "</td>";
-                            echo "<td>" . $row["9"] . "</td>";
-
                             echo "</tr>";
                         }
                 }
@@ -90,3 +80,5 @@ session_start();
         </table></center>
         <br></br>
             <center><a href = "buscar.php">Volver</a></center>
+    </body>
+</html
