@@ -26,7 +26,7 @@ session_start();
             $rut = $_POST['txtrut'];
             $pass = $_POST['password']; 
 
-            $sql_empleado = "SELECT RUT, NOMBRES, APELLIDOS, ID_CARGO FROM empleado WHERE RUT = '$rut' AND CONTRASEÑA = '$pass'";
+            $sql_empleado = "SELECT RUT, NOMBRES, APELLIDOS, ID_CARGO FROM empleados WHERE RUT = '$rut' AND CONTRASEÑA = '$pass'";
             $rs_empleado = mysqli_query($cnn, $sql_empleado);
 
             if (mysqli_num_rows($rs_empleado) != 0) {
